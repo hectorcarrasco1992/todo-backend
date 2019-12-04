@@ -97,16 +97,8 @@ const names = (todos) => todos.map(getTodoName)
 
 
 
-const namesAndPriorities = (todos) =>  {
-  const textAndPriorites = function(array){
-    if(getPriority(array)=== 2){
-      return `${getTodoName(array)} - High`
-    }else return`${getTodoName(array)} - Low`
-  }
+const namesAndPriorities = (todos) => todos.map((todo)=>todo.priority === 1?`${todo.text} - Low`:`${todo.text} - High`); 
 
-  return todos.map(textAndPriorites)
-
-}
 
 const justNotComplete = (todos) => todos.filter((todo)=>todo.complete === false)
 
